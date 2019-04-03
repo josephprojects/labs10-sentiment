@@ -28,7 +28,7 @@ const type = "team";
 // });
 
 // https://slack.com/oauth/authorize?client_id=553324377632.554405336645&scope=bot,chat:write:bot,commands,emoji:read
-// https://slack.com/oauth/authorize?scope=commands,bot&client_id=553324377632.554405336645&redirect_uri=https://botsentiment.herokuapp.com/api/slackauth&state=id2
+// https://slack.com/oauth/authorize?scope=commands,bot&client_id=553324377632.554405336645&redirect_uri=https://bot.herokuapp.com/api/slackauth&state=id2
 // https://slack.com/oauth/authorize?scope=commands,bot&client_id=553324377632.554405336645&redirect_uri=https://botsentiment.herokuapp.com/api/slackauth&state=id2
 // https://slack.com/oauth/authorize?scope=commands,bot&client_id=553324377632.554405336645&redirect_uri=http://localhost:5002/api/slackauth&state=id
 
@@ -143,7 +143,7 @@ router.get("/", (req, res) => {
             console.log("postInfo", postInfo);
             db.insert(postInfo)
               .then(() => {
-                res.redirect("https://sentimentbot.netlify.com/profile");
+                res.redirect("https://moodbotics.com/profile");
               })
               .catch(serverErrorPost(res));
           } else {
@@ -177,7 +177,7 @@ router.get("/", (req, res) => {
             db.update(id, updateInfo)
               .then(() => {
                 // sendToAuthorization();
-                res.redirect("https://sentimentbot.netlify.com/profile");
+                res.redirect("https://moodbotics.com/profile");
               })
               .catch(serverErrorUpdate500(res, "Auth"));
             // res.status(400).json({
